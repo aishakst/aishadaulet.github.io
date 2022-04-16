@@ -7,6 +7,9 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 <!-- font-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,5 +114,30 @@ function checkUncheck(main) {
   <li>Whisk the cooled cream, starting at the minimum speed, gradually increasing. When the cream has "held its shape", combine with the mascarpone and vanilla essence and whisk again. Spread the ready cream in an even layer on the cake, leaving a little distance from the edge. Sprinkle the remaining half of the chopped nuts on top and garnish with the raspberries. Then start to roll up the wide side. Place in the refrigerator for 30 minutes. Take out and cut into portioned slices. Decorate however you like!.</li>
 </ol>
 <script src="app3.js"></script>
+  
+ <div class="contianer">
+   <div class="card">
+     <h2><i class="fa fa-map-marker"></i><span id="location"></span></h2>
+     <h6 id="weather"></h6>
+     <h4><span id="temp"></span></h4>
+     <img src="" id="icon">
+     <button onClick="window.location.reload();" class="refresh"><i class="fa fa-refresh"></i></button>
+   </div>
+  </div>
+  <script type="text/javascript">
+    link="https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=48e5fdec90dbf070081f9735b8d2f0c2";
+    var request=new XMLHttpRequest();
+    request.open('Get',link,true);
+    request.onload=function(){
+      var obj=JSON.parse(this.response);
+      console log.(obj);
+      document.getElementById('weather').inner.HTML=obj.weather[0].description;
+      document.getElementById('location')inner.HTML=obj.name;
+       document.getElementById('temp')inner.HTML=obj.main.temp-273.15;
+      document.getElementById('icon').src="http://openweathermap.org/img/w/"+obj.weather[0].icon+".png";
+      }
+    if(request.status==200){ 
+      console.log("ERROR");}
+    request.send();
 </body>
 </html>
