@@ -10,6 +10,8 @@ h2 {color:white;font-family:Gabriola;font-size:40px;
   position: relative;
   left:150px;
   text-shadow: 0 0 10px black;}
+h3{ color:black;}
+h5{ color:black;}
 ul,ol {color:white; text-shadow: 0 0 10px black;}
 table,th,td{color:white;font-size:20px;text-align: center;left:250px; border-width:5px;
     border-style:double;position: sticky;left:150px; text-shadow: 0 0 10px black;
