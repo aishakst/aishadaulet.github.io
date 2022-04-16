@@ -130,7 +130,7 @@ function checkUncheck(main) {
     request.open('Get',link,true);
     request.onload=function(){
       var obj=JSON.parse(this.response);
-      console log.(obj);
+      console.log(obj);
       document.getElementById('weather').inner.HTML=obj.weather[0].description;
       document.getElementById('location')inner.HTML=obj.name;
        document.getElementById('temp')inner.HTML=obj.main.temp-273.15;
