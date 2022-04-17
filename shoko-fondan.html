@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIb_aaM3oosxNg9v3LqUlDbTEpJC133hQ&callback=initMap"
+          type="text/javascript"></script>
+  <script type="text/javascript">
+   x=navigator.geolocation;
+    x.getCurrentPosition(success,failure);
+    function success(position)
+    { var myLat=position.coords.latitude;
+     var myLong=position.coords.longitude;
+     var coords=new google.map.LatLng(myLat,myLong);
+     var mapOptions={
+       zoom:9,
+       center:coords,
+       mapTypeId:google.maps.MapTypeId.ROADMAP }
+     var map=new google.maps.Map(document.getElementById("map"),mapOptions);
+     var marker=new google.maps.Marker({map:map, position:coords}); }
+    function failure(){}
+  </script>
+    
   <link rel="stylesheet" href="css/styyle1.css">
  	  <title>Shoko-fondan</title>
     <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/cupcake_1f9c1.png" type="image/png">
@@ -101,5 +119,6 @@ Water bath for chocolate fonan with liquid center
   <li>Add flour sifted with baking powder. Stir with a spoon. Pour into the molds. Pour a little away from the edges, they will not rise much. A little secret for the liquid chocolate fondue recipe: if the molds are silicone, I recommend sprinkling them with cocoa, if others, then grease with butter and sprinkle cocoa on top.</li>
   <li>Quickly open the well heated oven and place the cupcakes in the oven for 7-9 minutes. It always takes me exactly 8 minutes, but everyone's oven is different. Once the cupcakes have risen, you can take them out. Allow the cupcakes to cool slightly and gently remove from the molds, they are very tender. Serve the chocolate fondant with ice cream (preferably a white ice cream scoop).</li>
 </ol>
+  <div id="map"> </div>
 </body>
 </html>
