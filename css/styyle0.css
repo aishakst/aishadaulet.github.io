@@ -12,3 +12,9 @@ table,th,td{color:white;font-size:20px;text-align: center;left:200px; border-wid
     border-style:double;position: sticky;text-shadow: 0 0 10px black;}
 .logo{width:20%;height:20%;}
 a{color:#fff; text-shadow: 0 0 10px black;font-family: 'Zen Antique', serif;}
+#map {
+  height: 400px;
+
+  width: 100%;
+
+}
